@@ -5,7 +5,10 @@
     <title>О компании агентства Мос-недвижимость</title>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/mobile.css"/>
-    <script src="js/mobile.js"></script>
+    <link src="js/mobile.js"></link>
+    
+    <script src="https://unpkg.com/rough-viz@1.0.5"></script>
+   
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
 </head>
@@ -25,10 +28,10 @@
                      </ul>
              </nav>
              <h1>О компании</h1>
-        </header>     
-         
+        </header>   
+                          
         <section>
-            
+                              
             <p>Сегодня Мос-Недвижимость — это одна из ведущих риэлторских 
                 компаний страны и один из крупнейших 
                 инвестиционно-девелоперских холдингов полного цикла, 
@@ -36,7 +39,30 @@
                 компании сосредоточена на двух направлениях: оказание 
                 риэлторских услуг в столичном регионе и создание 
                 малоэтажных жилых комплексов в ближайшем Подмосковье.</p>
-            <h3>Деятельность компании в сфере загородного строительства</h3>
+            <br />                 
+            <div class="wrapper">
+                <div id="vis0"></div>
+            </div> 
+            <script> 
+                new roughViz.Bar(
+                {
+                  element: '#vis0',
+                  data: {labels: ['2002','2003','2010'],
+                        values: [10, 20 , 15]},
+                  axisFontSize: '2rem',      
+                  title: 'График',
+                  highlight: 'orange',
+                  labels: 'letter',
+                  values: 'frequency',
+                  width: window.innerWidth,
+                  stroke: 'blue',
+                  strokeWidth: 3,
+                  color: 'blue',
+                  fillWeight: 1.5,
+                }
+              );              
+            </script>
+            <h3>Деятельность компании в сфере загородного строительства</h3>            
             <p>Первые инвестиционные проекты в области загородной 
                 недвижимости группа компаний Мос-Недвижимость начала 
                 реализовывать в 2002 году. Для элитного направления 
@@ -52,7 +78,8 @@
                 недвижимости: таунхаусы и апартаменты; проект Park Future 
                 включает квартал таунхаусов с оригинальным архитектурным решением.</p>            
              <br />
-        </section>         
+            
+        </section>          
         <footer>            
             <p>&copy;2020, Мос-Недвижимость 
                 Email: <a 
